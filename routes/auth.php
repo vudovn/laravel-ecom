@@ -12,3 +12,4 @@ Route::prefix('auth')->name('auth.')->middleware('checkLogin')->group(function (
 
 Route::post('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
+Route::get('/very/{token}', [AuthController::class, 'very'])->name('auth.very');
