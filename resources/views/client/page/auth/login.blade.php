@@ -52,7 +52,7 @@
                                         Nhớ tôi
                                         <span class="checked"></span>
                                     </span>
-                                    <label><a href="{{ route('auth.forgot-password.index') }}">Quên mật khẩu?</a></label>
+                                    <label><a href="">Quên mật khẩu?</a></label>
                                 </span>
                                 <span class="mn-login-wrap mn-login-btn">
                                     <span><a href="{{ route('auth.register.index') }}" class="">Tạo tài

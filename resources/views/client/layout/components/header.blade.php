@@ -2,7 +2,7 @@
     <div class="mn-header">
         <div class="mn-header-items">
             <div class="left-header">
-                <a href="index.html" class="logo"><img
+                <a href="{{ route('home.index') }}" class="logo"><img
                         src="https://maraviyainfotech.com/projects/mantu-html/assets/img/logo/logo.png"
                         alt="logo"></a>
                 <a href="javascript:void(0)" class="mn-toggle-menu">
