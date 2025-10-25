@@ -54,6 +54,8 @@
 /*=== Typography ===*/
 /*--  Poppins font  --*/
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 input {
     color: #000 !important;
 }
@@ -160,7 +162,7 @@ input {
   color: #313b50;
   display: block;
   font-size: 15px;
-  font-family: 'Poppins, sans-serif';
+  /* font-family: 'Poppins, sans-serif'; */
   line-height: 22px;
   font-weight: 600;
   margin: 0 auto;
@@ -325,7 +327,7 @@ input {
 .mn-side-cart .mn-cart-inner .mn-cart-title .cart_title {
   font-size: 15px;
   color: #313b50;
-  font-family: 'Poppins, sans-serif';
+  /* font-family: 'Poppins, sans-serif'; */
   font-weight: 600;
 }
 .mn-side-cart .mn-cart-inner .mn-cart-title .mn-cart-close {
@@ -684,7 +686,7 @@ input {
 .mn-side-wishlist .mn-wishlist-inner .mn-wishlist-title .wishlist_title {
   font-size: 15px;
   color: #313b50;
-  font-family: 'Poppins, sans-serif';
+  /* font-family: 'Poppins, sans-serif'; */
   font-weight: 600;
 }
 .mn-side-wishlist .mn-wishlist-inner .mn-wishlist-title .mn-wishlist-close {
@@ -940,7 +942,7 @@ input {
 .mn-side-search .mn-search-inner .mn-search-title .search_title {
   font-size: 15px;
   color: #313b50;
-  font-family: 'Poppins, sans-serif';
+  font-family: 'Quicksand, sans-serif';
   font-weight: 600;
 }
 .mn-side-search .mn-search-inner .mn-search-title .mn-search-close {
@@ -1148,7 +1150,7 @@ input {
 /** General **/
 body {
   margin: 0;
-  font-family: 'Poppins, sans-serif';
+  /* font-family: 'Poppins, sans-serif'; */
   letter-spacing: 0.03rem;
   background-color: #f1f4f7;
   overflow-x: hidden;
