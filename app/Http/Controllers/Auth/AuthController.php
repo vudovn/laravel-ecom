@@ -9,7 +9,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Jobs\SendVeryEmail;
-
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\PasswordReset;
 class AuthController extends Controller
 {
     public function login()
@@ -81,4 +83,68 @@ class AuthController extends Controller
         Auth::logout();
         return redirect()->route('auth.login.index')->with('success', 'Đăng xuất thành công');
     }
+
+    // reset password
+    public function forgotPassword()
+    {
+        return view('client.page.auth.forgot-password');
+    }
+
+    public function forgotPasswordPost(Request $request)
+    {
+        $request->validate(
+            [
+                'email' => 'required|email'
+            ],
+            [
+                'email.required' => 'Bạn chưa nhập email',
+                'email.email' => 'Email không đúng định dạng'
+            ]
+        );
+
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+
+        return $status === Password::ResetLinkSent
+            ? back()->with('success', __($status))
+            : back()->with('error', __($status));
+    }
+
+    public function resetPassword(Request $request, $token)
+    {
+        $email = $request->email;
+        return view('client.page.auth.reset-password', compact(
+            'token',
+            'email'
+        ));
+    }
+
+    public function resetPasswordPost(Request $request)
+    {
+        $request->validate([
+            'password' => 'required|min:4',
+            'password_confirmation' => 'same:password'
+        ], [
+            'password.required' => 'Bạn chưa nhập mật khẩu',
+            'password.min' => 'Mật khẩu tối thiểu là 4 ký tự',
+            'password_confirmation.same' => 'Mật khẩu xác nhận không khớp',
+        ]);
+
+        $status = Password::reset(
+            $request->only('email', 'password', 'password_confirmation', 'token'),
+            function (User $user, string $password) {
+                $user->forceFill([
+                    'password' => Hash::make($password)
+                ])->setRememberToken(Str::random(60));
+                $user->save();
+                event(new PasswordReset($user));
+            }
+        );
+
+        return $status === Password::PasswordReset
+            ? redirect()->route('auth.login.index')->with('success', __($status))
+            : back()->with('error', __($status));
+    }
+
 }
