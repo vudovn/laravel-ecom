@@ -13,7 +13,6 @@ class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable, HasRoles;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -27,6 +26,7 @@ class User extends Authenticatable
         'address',
         'province_id',
         'ward_id',
+        'is_active',
         'email_verified_at',
         'remember_token',
     ];
@@ -52,6 +52,16 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class);
+    }
+
+    public function ward()
+    {
+        return $this->belongsTo(Ward::class);
     }
 
     public function sendPasswordResetNotification($token)
