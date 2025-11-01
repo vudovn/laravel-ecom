@@ -1,0 +1,55 @@
+
+/* Select2 Dark Mode Support */
+[data-pc-theme="dark"] .select2-container--bootstrap-5 .select2-selection {
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+    color: #e5e7eb !important;
+}
+
+[data-pc-theme="dark"] .select2-container--bootstrap-5 .select2-selection--single .select2-selection__rendered {
+    color: #e5e7eb !important;
+}
+
+[data-pc-theme="dark"] .select2-container--bootstrap-5 .select2-selection--single .select2-selection__placeholder {
+    color: #9ca3af !important;
+}
+
+[data-pc-theme="dark"] .select2-container--bootstrap-5.select2-container--open .select2-selection,
+[data-pc-theme="dark"] .select2-container--bootstrap-5.select2-container--focus .select2-selection {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25) !important;
+}
+
+[data-pc-theme="dark"] .select2-container--bootstrap-5 .select2-dropdown {
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+}
+
+[data-pc-theme="dark"] .select2-container--bootstrap-5 .select2-results__option {
+    color: #e5e7eb !important;
+}
+
+[data-pc-theme="dark"] .select2-container--bootstrap-5 .select2-results__option--highlighted {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+}
+
+[data-pc-theme="dark"] .select2-container--bootstrap-5 .select2-results__option--selected {
+    background-color: #374151 !important;
+}
+
+[data-pc-theme="dark"] .select2-container--bootstrap-5 .select2-search__field {
+    background-color: #374151 !important;
+    border-color: #4b5563 !important;
+    color: #e5e7eb !important;
+}
+
+[data-pc-theme="dark"] .select2-container--bootstrap-5 .select2-search__field:focus {
+    border-color: #3b82f6 !important;
+}
+
+[data-pc-theme="dark"] .select2-container--bootstrap-5.select2-container--disabled .select2-selection {
+    background-color: #111827 !important;
+    color: #6b7280 !important;
+}
+

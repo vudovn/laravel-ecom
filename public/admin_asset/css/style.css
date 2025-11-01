@@ -20030,7 +20030,7 @@ pre[class*='language-'] {
   position: fixed;
   left: 280px;
   right: 0;
-  z-index: 1025;
+  z-index: 10;
   display: flex;
 }
 .pc-header ul {

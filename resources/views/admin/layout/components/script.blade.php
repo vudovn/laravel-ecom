@@ -9,6 +9,7 @@
 <script src="/admin_asset/js/script.js"></script>
 <script src="/admin_asset/js/theme.js"></script>
 <script src="https://ableproadmin.com/assets/js/plugins/feather.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
 <script>
     layout_change('dark');
 </script>
@@ -29,3 +30,10 @@
 </script>
 
 <script src="/admin_asset/library/location.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.select2').select2({
+            theme: 'bootstrap-5'
+        });
+    });
+</script>
